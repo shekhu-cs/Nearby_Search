@@ -1,0 +1,4 @@
+python 3
+django 2.1
+django-rest-framework 3.8.2
+python-google-places 1.4.1
