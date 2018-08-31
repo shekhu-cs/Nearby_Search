@@ -18,14 +18,16 @@ class NearRest(APIView):
             r_ratings = []
             r_types = []
             r_vicinity = []
-            for place in query_result.places:
-
+            
+            for place in query_result.places: # fetch relevent data 
                 place_names.append(place.name)
                 r_ratings.append(place.rating)
                 r_types.append(place.types)
                 r_vicinity.append(place.vicinity)
-            final_result = []
-            for i in zip(place_names, r_ratings, r_types, r_vicinity):
+                
+            final_result = [] # all the mapped data
+            
+            for i in zip(place_names, r_ratings, r_types, r_vicinity): #map all information with relevent data
                 final_result.append(i)
 
         return Response(final_result)
